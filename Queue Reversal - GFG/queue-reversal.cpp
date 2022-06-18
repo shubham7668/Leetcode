@@ -37,13 +37,11 @@ queue<int> rev(queue<int> q)
     // add code here.
     stack<int> s;
     while(!q.empty()){
-        int temp=q.front();
-        s.push(temp);
+        s.push(q.front());
         q.pop();
     }
     while(!s.empty()){
-        int temp1=s.top();
-        q.push(temp1);
+        q.push(s.top());
         s.pop();
     }
     
