@@ -7,6 +7,7 @@ public:
         int start=0;   // Start from 0th index
         
         for(int i=0;i<gas.size();i++){
+            
             balance += gas[i] - cost[i];
             
             if(balance<0){
