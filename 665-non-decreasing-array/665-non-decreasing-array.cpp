@@ -6,9 +6,9 @@ public:
             if(nums[i-1] > nums[i]){
                 cnt++;
                 if(i-2<0 || nums[i-2] <= nums[i])
-                    nums[i-1] = nums[i];   //modify nums[i-1] of a priority
+                    nums[i-1] = nums[i];   
               
-                else nums[i] = nums[i-1];   //have to modify nums[i]
+                else nums[i] = nums[i-1];   
             }
         }
         return cnt<=1;
