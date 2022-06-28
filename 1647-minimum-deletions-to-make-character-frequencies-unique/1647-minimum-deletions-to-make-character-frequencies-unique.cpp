@@ -8,9 +8,7 @@ public:
         }
         
         sort(v.begin(),v.end(),greater<int>());  //Sort in decreasing order
-        // for(int i=0;i<v.size();i++){
-        //     cout<<v[i]<<" ";
-        // }
+        
         int freq=v[0];       //Maximum allowed frequency
         int ans=0;
         
