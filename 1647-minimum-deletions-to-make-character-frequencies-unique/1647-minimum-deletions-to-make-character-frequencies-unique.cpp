@@ -3,9 +3,7 @@ public:
     int minDeletions(string s) {
         vector<int> v(26);
         
-        for(int i=0;i<s.length();i++){
-            v[s[i]-'a']++;
-        }
+        for(int i=0;i<s.length();i++) v[s[i]-'a']++;
         
         sort(v.begin(),v.end(),greater<int>());  //Sort in decreasing order
         
