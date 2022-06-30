@@ -11,9 +11,21 @@
  */
 class Solution {
 private:
+    int height(TreeNode* root){
+        if(root == nullptr) return 0;
+        
+        int left=height(root->left);
+        int right=height(root->right);
+        
+        int ans= max(left,right)+1;
+        return ans;
+    }
+    
+    
+    
     pair<int,int> diameter1(TreeNode* root){
         
-		if(root == nullptr ){             //first block=diameter, Second block=height
+        if(root == nullptr ){             //first block=diameter, Second block=height
             pair<int,int> p = make_pair(0,0);
             return p;
         } 
@@ -33,6 +45,21 @@ private:
     }
 public:
     int diameterOfBinaryTree(TreeNode* root) {
-         return diameter1(root).first;  
-	}
+        
+//         Brute Force
+//         if(root == NULL) return 0;
+        
+//         int leftSubTree = diameterOfBinaryTree(root->left);
+//         int rightSubTree = diameterOfBinaryTree(root->right);
+//         int bothSubTree = height(root->left) + height(root->right);
+        
+//         int ans = max(leftSubTree, max(rightSubTree,bothSubTree));
+        
+//         return ans;
+        
+        //Optimised using pair
+        return diameter1(root).first;
+        
+        
+    }
 };
