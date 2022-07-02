@@ -34,8 +34,8 @@ public:
         
 //         return (height*length) % 1000000007;
         
-        long length=solve(horizontalCuts,h);
-        long height=solve(verticalCuts,w);
+        long long length=solve(horizontalCuts,h);
+        long long height=solve(verticalCuts,w);
         
         return (length*height)%1000000007;
     }
