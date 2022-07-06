@@ -4,7 +4,7 @@ public:
         if(n==0||n==1) return n;
         int ans=0;
         
-        ans+=fib(n-1)+fib(n-2);
+        ans=fib(n-1)+fib(n-2);
         
         return ans;
         
