@@ -34,11 +34,11 @@ public:
         }
         vector<vector<int>> ans;
         for(auto i:nodes){
-            vector<int> col;
+            vector<int> temp;
             for(auto j:i.second){
-                col.insert(col.end(),j.second.begin(),j.second.end());
+                temp.insert(temp.end(),j.second.begin(),j.second.end());
             }
-            ans.push_back(col);
+            ans.push_back(temp);
         }
         return ans;
     }
