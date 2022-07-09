@@ -12,7 +12,7 @@ class Solution
 {
 public:
  vector<vector<int>> result;
-    void helper(int i,int j, vector<vector<int>> grid, vector<int> v,int n, int m){
+    void solve(int i,int j, vector<vector<int>> grid, vector<int> v,int n, int m){
     
     
         if(i==n-1 && j==m-1){         
@@ -25,8 +25,8 @@ public:
         
      
         v.push_back(grid[i][j]);   
-        helper(i+1,j,grid,v,n,m);  
-        helper(i,j+1,grid,v,n,m);  
+        solve(i+1,j,grid,v,n,m);  
+        solve(i,j+1,grid,v,n,m);  
         return;
     }
     
@@ -34,7 +34,7 @@ public:
     {
         if(grid.size()==0) return{{}};
         vector<int> v;
-        helper(0,0,grid,v,n,m);
+        solve(0,0,grid,v,n,m);
         return result;
     }
 };
