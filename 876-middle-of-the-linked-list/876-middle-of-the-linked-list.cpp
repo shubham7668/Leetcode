@@ -20,13 +20,12 @@ public:
             n++;
         }
         curr=head;
-        int i=0,temp=n/2;
+        int i=0;
+        int temp=n/2;
         
-        cout<<temp;
-        
-        while(i<temp){
+        while(temp){
             curr=curr->next;
-            i++;
+            temp--;
         }
         return curr;
     }
