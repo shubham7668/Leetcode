@@ -30,8 +30,6 @@ public:
                 
                 if(curr->left) q.push(curr->left);
                 if(curr->right) q.push(curr->right);
-
-                
             }
             ans.push_back(level);
         }
