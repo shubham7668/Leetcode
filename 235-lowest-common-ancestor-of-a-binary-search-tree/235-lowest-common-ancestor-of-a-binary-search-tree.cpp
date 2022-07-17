@@ -19,9 +19,8 @@ public:
         TreeNode* right=lowestCommonAncestor(root->right,p,q);
         
         //Check conditions
-        if(left==nullptr ) return right;
-        else if(right==nullptr ) return left;
-       // else if(right==nullptr && left==nullptr) return NULL;
+        if(left==nullptr) return right;
+        else if(right==nullptr) return left;
         else 
             return root;
     }
