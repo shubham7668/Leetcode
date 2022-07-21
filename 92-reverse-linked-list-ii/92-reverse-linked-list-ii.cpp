@@ -19,18 +19,18 @@ public:
         dummy->next=head;
         
         ListNode* curr=dummy;
-        ListNode* leftPtr=dummy;
+        ListNode* prev=dummy;
         
-        for(int i=0;i<left-1;i++) leftPtr=leftPtr->next;
+        for(int i=0;i<left-1;i++) prev=prev->next;
         
-        curr=leftPtr->next;
+        curr=prev->next;
         
         //Reverse Logic
         for(int i=0;i<right-left;i++){
-            ListNode* temp=leftPtr->next;
-            leftPtr->next=curr->next;
+            ListNode* temp=prev->next;
+            prev->next=curr->next;
             curr->next=curr->next->next;
-            leftPtr->next->next=temp;
+            prev->next->next=temp;
          }
         
         return dummy->next;
