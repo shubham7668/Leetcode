@@ -21,9 +21,7 @@ public:
         ListNode* prev=dummy;
         ListNode* leftPtr=dummy;
         
-        for(int i=0;i<left-1;i++){
-            leftPtr=leftPtr->next;
-        }
+        for(int i=0;i<left-1;i++) leftPtr=leftPtr->next;
         
         prev=leftPtr->next;
         
