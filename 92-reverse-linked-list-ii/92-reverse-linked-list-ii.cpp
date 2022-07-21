@@ -18,18 +18,18 @@ public:
         ListNode* dummy = new ListNode(-1);
         dummy->next=head;
         
-        ListNode* prev=dummy;
+        ListNode* curr=dummy;
         ListNode* leftPtr=dummy;
         
         for(int i=0;i<left-1;i++) leftPtr=leftPtr->next;
         
-        prev=leftPtr->next;
+        curr=leftPtr->next;
         
         //Reverse Logic
         for(int i=0;i<right-left;i++){
             ListNode* temp=leftPtr->next;
-            leftPtr->next=prev->next;
-            prev->next=prev->next->next;
+            leftPtr->next=curr->next;
+            curr->next=curr->next->next;
             leftPtr->next->next=temp;
          }
         
