@@ -13,7 +13,7 @@ class Solution {
 
 public:
     TreeNode* fun(vector<int> pre, vector<int> in ,int &index,
-                  int inStart,int inEnd,int size,map<int,int> &mpp){
+                  int inStart,int inEnd,int size,unordered_map<int,int> &mpp){
         
         //Base case
         if(index>=size || inStart>inEnd) return NULL;
@@ -40,7 +40,7 @@ public:
         
         int preIndex=0;
         int n=pre.size();
-        map<int,int> valToInd;
+        unordered_map<int,int> valToInd;
         for(int i=0;i<n;i++){
             valToInd[in[i]]=i;
         }
