@@ -6,7 +6,8 @@ public:
             int mid=s+(e-s)/2;
             if(target==nums[mid]) return mid;
             
-            else if(target>nums[mid]) return binary(nums,mid+1,e,target);
+            else if(target>nums[mid]) 
+                return binary(nums,mid+1,e,target);
             
             else
                 return binary(nums,s,mid-1,target);
