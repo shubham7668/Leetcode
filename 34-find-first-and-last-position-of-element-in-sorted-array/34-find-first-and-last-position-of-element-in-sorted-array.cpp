@@ -4,9 +4,8 @@ public:
         //Brute Force -> O(n)
         vector<int> ans(2, -1);
         int n=nums.size();
-        if(n==0){
-            return ans;
-        }
+        if(n==0) return ans;
+       
         // int i;
         // for(i=0;i<n;i++){
         //     if(nums[i]==target){
