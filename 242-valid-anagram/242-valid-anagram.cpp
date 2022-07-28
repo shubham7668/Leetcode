@@ -1,6 +1,8 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
+        //BRUTE FORCE
+        if(s.size()!=t.size()) return false;
         map<char,int> mpp1;
         map<char,int> mpp2;
         for(int i=0;i<s.size();i++){
@@ -12,5 +14,7 @@ public:
         if(mpp1==mpp2) return true;
         else
             return false;
+        
+       
     }
 };
