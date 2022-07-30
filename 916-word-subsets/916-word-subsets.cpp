@@ -4,7 +4,7 @@ public:
         vector<string> ans;
         vector<int> v(26, 0);
         
-        for(string w: words2) 
+        for(string w: words2) //We will use hashmap for better time complexity
         {
             vector<int> temp(26, 0);
             for(char c: w) temp[c-'a']++;
