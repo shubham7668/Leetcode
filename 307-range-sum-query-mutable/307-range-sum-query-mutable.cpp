@@ -1,63 +1,63 @@
-// class NumArray {
-// public:
-   
-//     vector<int> v; //For storing elements
-//     int sum;    //Sum of all elements
-    
-//     NumArray(vector<int>& nums){
-//         nums=v;
-//         sum=0;
-//         for(auto i:nums) sum+=i;
-//     }
-    
-//     void update(int index, int val){
-//         sum=sum-v[index];
-//         v[index]=val;
-//         sum=sum+val;
-//     }
-    
-//     int sumRange(int left, int right) {
-//         int ans=sum;
-//         for(int i=0;i<left;i++){
-//             ans-=v[i];
-//         }
-//         for(int i=right+1;i<v.size();i++){
-//             ans-=v[i];
-//         }
-//         return ans;
-//     }
-// };
-
 class NumArray {
 public:
-    vector<int>v; //vector to store input vector.
-    int sum; //sum of all element of vector 
-    NumArray(vector<int>& nums) {
+   
+    vector<int> v; //For storing elements
+    int sum;    //Sum of all elements
+    
+    NumArray(vector<int>& nums){
         v=nums;
         sum=0;
-        for(int i=0;i<nums.size();i++){
-            sum+=nums[i];
-        }
+        for(auto i:nums) sum+=i;
     }
     
-    void update(int index, int val) {
-        sum-=v[index];     //subtract old element  from sum at index and then update by adding new element val.
+    void update(int index, int val){
+        sum=sum-v[index];
         v[index]=val;
-        sum+=val;
-        
+        sum=sum+val;
     }
     
     int sumRange(int left, int right) {
-        int res=sum; 
-        for(int i=0;i<left;i++){    //subtract all element before left and after right
-            res-=v[i];
+        int ans=sum;
+        for(int i=0;i<left;i++){
+            ans-=v[i];
         }
         for(int i=right+1;i<v.size();i++){
-            res-=v[i];
+            ans-=v[i];
         }
-        return res;// return res ie. our answer.
+        return ans;
     }
 };
+
+// class NumArray {
+// public:
+//     vector<int>v; //vector to store input vector.
+//     int sum; //sum of all element of vector 
+//     NumArray(vector<int>& nums) {
+//         v=nums;
+//         sum=0;
+//         for(int i=0;i<nums.size();i++){
+//             sum+=nums[i];
+//         }
+//     }
+    
+//     void update(int index, int val) {
+//         sum-=v[index];     //subtract old element  from sum at index and then update by adding new element val.
+//         v[index]=val;
+//         sum+=val;
+        
+//     }
+    
+//     int sumRange(int left, int right) {
+//         int res=sum; 
+//         for(int i=0;i<left;i++){    //subtract all element before left and after right
+//             res-=v[i];
+//         }
+//         for(int i=right+1;i<v.size();i++){
+//             res-=v[i];
+//         }
+//         return res;// return res ie. our answer.
+//     }
+// };
 
 /**
  * Your NumArray object will be instantiated and called as such:
