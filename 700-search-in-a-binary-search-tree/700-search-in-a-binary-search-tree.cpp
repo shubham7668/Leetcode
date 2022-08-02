@@ -26,7 +26,7 @@ public:
 //            return searchBST(root->left,val);
         
         while(root!=NULL && root->val!=val){
-            root=root->val > val ? root->left : root->right;
+            root->val > val ? root=root->left : root=root->right;
         }
         return root;
     }
