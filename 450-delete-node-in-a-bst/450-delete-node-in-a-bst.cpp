@@ -11,20 +11,8 @@
  */
 class Solution {
 public:
-//     TreeNode* minimum(TreeNode* root){
-//         TreeNode* temp = root;
-        
-//         if(temp==NULL) return NULL;
-        
-//         while(temp->left){
-//             temp=temp->left;
-//         }
-//         return temp;
-//     }
     
     int minimum(TreeNode* root){
-        
-        if(root==NULL) return 0;
         
         while(root->left){
             root=root->left;
