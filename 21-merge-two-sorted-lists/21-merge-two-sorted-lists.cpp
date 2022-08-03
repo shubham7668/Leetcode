@@ -22,7 +22,6 @@ public:
         ListNode* curr2=list2;
         
         while(curr1 && curr2){
-            
             if(curr1->val < curr2->val){
                 temp->next=curr1;
                 curr1=curr1->next;
