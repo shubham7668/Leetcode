@@ -12,8 +12,7 @@ private:
             swap(nums[i],nums[j]);
             solve(nums,i+1,ans);
             
-            //backtrack
-            swap(nums[i],nums[j]);
+            swap(nums[i],nums[j]);  //backtrack
         }
     }
     
