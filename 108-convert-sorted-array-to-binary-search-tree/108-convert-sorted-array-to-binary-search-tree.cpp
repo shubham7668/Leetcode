@@ -13,19 +13,15 @@
 TreeNode* makeBST(vector<int>& nums,int start,int end)
 {
     if(start>end) return NULL;
-    if(start==end){
-        TreeNode* ans = new TreeNode(nums[start]);
-        return ans;
-    }
     
     int mid=start+(end-start)/2;
-    int data = nums[mid];
+    TreeNode* ans= new TreeNode(nums[mid]);
     
-    TreeNode* left = makeBST(nums,start,mid-1);
-    TreeNode* right = makeBST(nums,mid+1,end);
+    ans->left=makeBST(nums,start,mid-1);
+    ans->right=makeBST(nums,mid+1,end);
     
-    TreeNode* ans=new TreeNode(data,left,right);
     return ans;
+
 }
 class Solution {
 public:
