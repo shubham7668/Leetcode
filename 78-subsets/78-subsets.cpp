@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    void subset(vector<int> nums,vector<int> &ds,
+    void subset(vector<int> nums,vector<int> ds,
                 vector<vector<int>> &ans,int index){
         
         if(index==nums.size()){
@@ -9,12 +9,14 @@ public:
             return;
         }
         
+        //exclude
+        subset(nums,ds,ans,index+1);
+        
         //include 
         ds.push_back(nums[index]);
         subset(nums,ds,ans,index+1);
-        ds.pop_back();
-        //exclude
-        subset(nums,ds,ans,index+1);
+        
+        
     }
         
     vector<vector<int>> subsets(vector<int>& nums) {
