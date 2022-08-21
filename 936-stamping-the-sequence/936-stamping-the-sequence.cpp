@@ -1,24 +1,50 @@
 class Solution {
 public:
-    vector<int> movesToStamp(string stamp, string target) {
-  vector<int> res;
-  auto total_stamp = 0, turn_stamp = -1;
-  while (turn_stamp) {
-      turn_stamp = 0;
-      for (int sz = stamp.size(); sz > 0; --sz) 
-          for (auto i = 0; i <= stamp.size() - sz; ++i) {
-              auto new_stamp = string(i, '*') + stamp.substr(i, sz) + string(stamp.size() - sz - i, '*');
-              auto pos = target.find(new_stamp);
-              while (pos != string::npos) {
-                  res.push_back(pos);
-                  turn_stamp += sz;
-                  fill(begin(target) + pos, begin(target) + pos + stamp.size(), '*');
-                  pos = target.find(new_stamp);
-              }
+  vector<int> movesToStamp(string stamp, string target) {
+    vector<bool> visited(target.size(), false);
+    vector<int> ret;
+
+    int stars = 0;
+    while (stars < target.size()) {
+      bool has_replace = false;
+      for (int i = 0; i <= target.size() - stamp.size(); i++) {
+        if (!visited[i] && canReplace(target, i, stamp)) {
+          stars = doReplace(target, i, stamp.size(), stars);
+
+          has_replace = true;
+          visited[i] = true;
+          ret.push_back(i);
+          if (stars == target.size()) {
+            break;
           }
-      total_stamp += turn_stamp;
+        }
+      }
+
+      if (!has_replace) {
+        return vector<int>{};
+      }
+    }
+
+    reverse(ret.begin(), ret.end());
+    return ret;
   }
-  reverse(begin(res), end(res));
-  return total_stamp == target.size() ? res : vector<int>();
-}
+  // from pos at start from target to match stamp
+  bool canReplace(string &target, int start, string &stamp) {
+    for (int i = 0; i < stamp.size(); i++) {
+      if (target[i + start] != '*' && target[i + start] != stamp[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  int doReplace(string &target, int start, int len, int count) {
+    for (int i = 0; i < len; i++) {
+      if (target[i + start] != '*') {
+        target[i + start] = '*';
+        count++;
+      }
+    }
+    return count;
+  }
 };
