@@ -19,14 +19,30 @@ public:
             }
         }
     }
+    
+    void spaceOptimised(int index,vector<int> &nums,vector<vector<int>> &ans)
+    {
+        //Base Case
+        if(index==nums.size()-1){
+            ans.push_back(nums);
+            return;
+        }
+        for(int i=index;i<nums.size();i++){
+            swap(nums[i],nums[index]);
+            spaceOptimised(index+1,nums,ans);
+            swap(nums[i],nums[index]);
+        }
+        
+    }
     vector<vector<int>> permute(vector<int>& nums) {
         vector<vector<int>> ans;
-        vector<int> ds;
-        vector<int>vis(nums.size(),0);
+        // vector<int> ds;
+        // vector<int>vis(nums.size(),0);
+        // recursion(nums,ans,ds,vis);
+        // return ans;
         
-        
-        recursion(nums,ans,ds,vis);
+        spaceOptimised(0,nums,ans);
         return ans;
-    }
+     }
 };
 
