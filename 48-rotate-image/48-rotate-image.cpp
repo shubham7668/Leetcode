@@ -11,13 +11,14 @@ public:
          }
         
         
-        for(int i=0;i<rows;i++){
-            int k=0,l=cols-1;
-            while(k<=l){
-                swap(mat[i][k],mat[i][l]);
-                k++;
-                l--;
-            }
-        }
+         for(int i=0;i<rows;i++){
+        //     int k=0,l=cols-1;
+        //     while(k<=l){
+        //         swap(mat[i][k],mat[i][l]);
+        //         k++;
+        //         l--;
+        //     } OR
+             reverse(mat[i].begin(),mat[i].end());
+          }
     }
 };
