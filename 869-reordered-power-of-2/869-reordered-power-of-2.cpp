@@ -22,9 +22,9 @@ public:
             n/=10;
         }
         
-        for(int i=1;i<maxi;i=i*2){
+        for(auto i: mp){
             bool flag=1;
-            vector<int> check=mp[i];
+            vector<int> check=i.second;
             for(int j=0;j<10;j++){
                 if(check[j]!=now[j]) flag=0;
             }
