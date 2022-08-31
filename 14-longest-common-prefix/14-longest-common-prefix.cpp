@@ -4,7 +4,7 @@ public:
         string ans=strs[0];
         for(int i=1;i<strs.size();i++){
             string temp=strs[i];
-            //if(ans[0]!=temp[0]) return "";
+            if(ans[0]!=temp[0]) return "";
             int j=0,k=0;
             while(j<temp.size()){
                 if(ans[k]==temp[j]){
