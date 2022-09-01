@@ -18,10 +18,10 @@ public:
             ans++;
             maxi=root->val;
         }
-        int left=goodNodes(root->left,maxi);
-        int right=goodNodes(root->right,maxi);
+        ans+=goodNodes(root->left,maxi);
+        ans+=goodNodes(root->right,maxi);
         
-        return ans+left+right;
+        return ans;
         
     }
 };
