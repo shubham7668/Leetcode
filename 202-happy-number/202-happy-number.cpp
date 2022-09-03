@@ -14,6 +14,8 @@ public:
             auto i=s.find(n);
             if(i==s.end()) s.insert(n);
             else return 0;
-         }
+            // for(auto i: s) cout<<i<<" ";
+            // cout<<endl;
+           }
      }
 };
