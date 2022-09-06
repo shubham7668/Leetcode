@@ -7,11 +7,19 @@ public:
         //0,0,0,13    3,0 3,1 3,2 3,3
         int n=mat.size();
         int sum=0;
-        for(int i=0;i<n;i++){           
-            for(int j=0;j<n;j++){
-                if(i==j || j==(n-1-i)) sum+=mat[i][j];
-            }
+        // for(int i=0;i<n;i++){           
+        //     for(int j=0;j<n;j++){
+        //         if(i==j || j==(n-1-i)) sum+=mat[i][j];
+        //     }
+        // }
+        // return sum;
+        
+        for(int i=0;i<n;i++){
+            sum+=mat[i][i]+mat[i][n-1-i];
+            cout<<mat[i][i]<<" "<<mat[i][n-1-i];
+            cout<<endl;
         }
-        return sum;
+        if(n%2!=0) return sum-mat[n/2][n/2];
+        else return sum;
     }
 };
