@@ -11,12 +11,20 @@
 class Solution {
 public:
     int getDecimalValue(ListNode* head) {
-        string str="";
-        ListNode* curr=head;
-        while(curr){
-            str+=to_string(curr->val);
-            curr=curr->next;
+        // string str="";
+        // ListNode* curr=head;
+        // while(curr){
+        //     str+=to_string(curr->val);
+        //     curr=curr->next;
+        // }
+        // return stoi(str,0,2);
+        
+        //Optimised
+        int ans=0;
+        while(head){
+            ans=ans*2+(head->val);
+            head=head->next;
         }
-        return stoi(str,0,2);
+        return ans;
     }
 };
