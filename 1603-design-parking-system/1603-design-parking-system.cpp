@@ -1,22 +1,22 @@
 class ParkingSystem {
 public:
-    int big,medium,small;
+    int b,s,m;
     ParkingSystem(int big, int medium, int small) {
-        this->big=big;
-        this->medium=medium;
-        this->small=small;
+        b=big;
+        m=medium;
+        s=small;
     }
     bool addCar(int carType) {
-        if(carType==1 && this->big>0){
-            this->big-=1;
+        if(carType==1 && b>0){
+            b-=1;
             return 1;
         }
-        if(carType==2 && this->medium>0){
-            this->medium-=1;
+        if(carType==2 && m>0){
+            m-=1;
             return 1;
         }
-        if(carType==3 && this->small>0){
-            this->small-=1;
+        if(carType==3 && s>0){
+            s-=1;
             return 1;
         }
         return 0;
