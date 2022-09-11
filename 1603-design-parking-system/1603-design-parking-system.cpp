@@ -1,22 +1,13 @@
 class ParkingSystem {
 public:
-    int b,s,m;
+    vector<int> carSize;
     ParkingSystem(int big, int medium, int small) {
-        b=big;
-        m=medium;
-        s=small;
+        carSize={big,medium,small};
     }
+    
     bool addCar(int carType) {
-        if(carType==1 && b>0){
-            b-=1;
-            return 1;
-        }
-        if(carType==2 && m>0){
-            m-=1;
-            return 1;
-        }
-        if(carType==3 && s>0){
-            s-=1;
+        if(carSize[carType-1]>0){
+            carSize[carType-1]=carSize[carType-1]-1;
             return 1;
         }
         return 0;
