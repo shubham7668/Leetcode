@@ -13,20 +13,16 @@ class Solution {
 public:
     void rec(TreeNode* root) {
         if (!root)  return;
-        
         mp[root->val]++;
         
         // If we got to a leaf - check if the path can be a polindrome
         if (!root->left && !root->right) {
             int odd = 0;
-            for (auto a : mp)
-                if (a.second % 2 == 1)
-                    odd++;
+            for(auto a : mp)
+                if (a.second % 2 == 1) odd++;
 
-            if (odd <= 1)
-                res++;
+            if(odd <= 1) res++;
         }
-        
         rec(root->left);
         rec(root->right);
         mp[root->val]--;
