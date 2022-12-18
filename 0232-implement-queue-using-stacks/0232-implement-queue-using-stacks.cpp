@@ -1,36 +1,39 @@
 class MyQueue {
 public:
-    stack<int> st1;
-    stack<int> st2;
+    stack<int> s1,s2;
     MyQueue() {
-        
+        //We will use 2 stacks s1,s2
+        //and will use s2 as auxilary space
     }
     
     void push(int x) {
-        while(!st1.empty()){
-            st2.push(st1.top());
-            st1.pop();
+        //s1->s2
+        while(!s1.empty()){ 
+            s2.push(s1.top());
+            s1.pop();
         }
-        st2.push(x);
-        while(!st2.empty()){
-            st1.push(st2.top());
-            st2.pop();
+        //push in s1
+        s1.push(x);
+        
+        //s2->s1
+        while(!s2.empty()){ 
+            s1.push(s2.top());
+            s2.pop();
         }
-     }
+    }
     
     int pop() {
-        int pop=st1.top();
-        st1.pop();
-        return pop;
+        int val=s1.top();
+        s1.pop();
+        return val;
     }
     
     int peek() {
-        return st1.top();
+        return s1.top();
     }
     
     bool empty() {
-        if(st1.empty()) return 1;
-        else return 0;
+        return s1.empty();
     }
 };
 
