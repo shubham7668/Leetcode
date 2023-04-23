@@ -8,7 +8,7 @@ public:
             int num = s[i] - '0', j = i + 1;
             while (num > 0 && num <= k && j < n + 1) {
                 dp[i] = (dp[i] + dp[j]) % 1000000007;
-		        // a tiny trick to avoid overflow
+		        
                 num = (j < n && num <= k / 10) ? 10 * num + (s[j] - '0') : INT_MAX;
                 j++;
             }
