@@ -12,7 +12,7 @@ public:
         sort(adjSum.begin(),adjSum.end(),greater<int>());
         
         for(int i = 0;i<k-1;i++){
-            mx +=(long long) adjSum[i],
+            mx +=(long long) adjSum[i];
             mn +=(long long) adjSum[n-i-2]; 
         }
         
