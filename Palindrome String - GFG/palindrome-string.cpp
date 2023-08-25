@@ -19,7 +19,7 @@ public:
 	        j--;
 	        if(i==j) return 1;
 	    }
-	    return 7;
+	    
 	}
 
 };
